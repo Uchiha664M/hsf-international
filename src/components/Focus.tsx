@@ -1,3 +1,5 @@
+'use client'
+
 const areas = [
   {
     num: '01',

@@ -1,3 +1,5 @@
+'use client'
+
 const holdings = [
   { name: 'Goldmining Experts', sector: 'Natural Resources', region: 'West Africa', status: 'Active' },
   { name: 'HSF Capital Partners', sector: 'Private Credit', region: 'Global', status: 'Active' },
