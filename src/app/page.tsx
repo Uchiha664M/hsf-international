@@ -4,6 +4,8 @@ import Stats from '@/components/Stats'
 import About from '@/components/About'
 import Focus from '@/components/Focus'
 import Portfolio from '@/components/Portfolio'
+import Milestones from '@/components/Milestones'
+import Leadership from '@/components/Leadership'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -16,6 +18,8 @@ export default function Home() {
       <About />
       <Focus />
       <Portfolio />
+      <Milestones />
+      <Leadership />
       <Contact />
       <Footer />
     </main>

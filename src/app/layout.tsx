@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HSF International — Global Investment & Resource Management",
-  description: "HSF International is a premier global investment and resource management firm operating across emerging markets, commodities, and strategic assets worldwide.",
+  title: "HSF International Ltd — Delivering Excellence. Driving Growth.",
+  description: "HSF International is Uganda's leading multi-sector business solutions firm — 15+ years delivering excellence across ICT, Finance, Logistics, Engineering, Supply Chain, Agriculture, Oil & Gas, and Tourism.",
 };
 
 export default function RootLayout({

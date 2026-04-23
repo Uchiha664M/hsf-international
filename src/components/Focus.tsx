@@ -1,78 +1,89 @@
 'use client'
 
-const areas = [
+const sectors = [
   {
     num: '01',
-    title: 'Natural Resources',
-    desc: 'Precious metals, minerals, and energy extraction across Africa, Asia, and South America. End-to-end operational control from licensing through offtake.',
+    title: 'Information & Communication Technology',
+    desc: 'End-to-end ICT solutions — network infrastructure, software systems, digital transformation, and managed IT services for enterprise and government clients.',
   },
   {
     num: '02',
-    title: 'Emerging Markets',
-    desc: 'Strategic equity positions in high-growth frontier economies. Consumer, infrastructure, and technology sectors with asymmetric return profiles.',
+    title: 'Finance & Investment',
+    desc: 'Strategic financial advisory, investment facilitation, microfinance solutions, and access-to-capital programs for businesses at every growth stage.',
   },
   {
     num: '03',
-    title: 'Real Assets',
-    desc: 'Industrial land, logistics infrastructure, and agricultural assets. Tangible value with inflation resilience and sovereign-backed security.',
+    title: 'Logistics & Transportation',
+    desc: 'Comprehensive freight management, fleet operations, customs clearance, and last-mile delivery solutions across Uganda and the East African region.',
   },
   {
     num: '04',
-    title: 'Private Credit',
-    desc: 'Structured lending to resource-sector operators and mid-market enterprises. Risk-adjusted yield with first-lien collateral and covenant protection.',
+    title: 'Engineering & Construction',
+    desc: 'Civil works, structural engineering, infrastructure development, and project management services delivered to specification, on time and within budget.',
   },
   {
     num: '05',
-    title: 'Trade Finance',
-    desc: 'Commodity-backed trade flows across global corridors. Short-duration, self-liquidating structures with strong counterparty profiles.',
+    title: 'Supply Chain Management',
+    desc: 'Procurement, warehousing, inventory management, and distribution network optimization for retail, manufacturing, and institutional clients.',
   },
   {
     num: '06',
-    title: 'Strategic Advisory',
-    desc: 'Regulatory navigation, M&A structuring, and market-entry strategy for institutions seeking frontier exposure without operational overhead.',
+    title: 'Agriculture & Agribusiness',
+    desc: 'Agricultural inputs, mechanization services, agro-processing, market linkages, and value chain development supporting Uganda\'s food and export sectors.',
+  },
+  {
+    num: '07',
+    title: 'Oil, Gas & Energy',
+    desc: 'Technical services, equipment supply, and operational support for Uganda\'s emerging oil & gas sector — with a focus on local content and safety compliance.',
+  },
+  {
+    num: '08',
+    title: 'Tourism & Hospitality',
+    desc: 'Destination management, hospitality consultancy, and tourism product development amplifying Uganda\'s world-class natural and cultural assets.',
   },
 ]
 
 export default function Focus() {
   return (
-    <section id="focus" className="py-40" style={{ background: 'var(--bg-2)' }}>
+    <section id="services" className="py-40" style={{ background: 'var(--bg-2)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-6 h-px" style={{ background: 'var(--gold)' }} />
-          <span className="text-xs tracking-[0.3em] uppercase" style={{ color: 'var(--gold)' }}>Focus Areas</span>
+          <div className="w-6 h-px" style={{ background: 'var(--accent)' }} />
+          <span className="text-xs tracking-[0.3em] uppercase" style={{ color: 'var(--accent)' }}>Services</span>
         </div>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
           <h2
             className="font-semibold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--text)' }}
           >
-            Where we deploy<br />capital.
+            Eight sectors.
+            <br />
+            One standard.
           </h2>
           <p className="max-w-xs text-sm leading-7" style={{ color: 'var(--muted)' }}>
-            Six investment verticals. One relentless standard of conviction.
+            Integrated solutions across Uganda's most critical industries — delivered with the same
+            rigour regardless of sector.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ border: '1px solid var(--border)' }}>
-          {areas.map((a) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px" style={{ background: 'var(--border)' }}>
+          {sectors.map((s) => (
             <div
-              key={a.num}
-              className="p-10 flex flex-col gap-6 group cursor-default transition-all duration-300"
-              style={{ background: 'var(--bg-2)', borderBottom: '1px solid var(--border)' }}
+              key={s.num}
+              className="p-8 flex flex-col gap-5 cursor-default transition-all duration-300"
+              style={{ background: 'var(--bg-2)' }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = 'rgba(201,168,76,0.04)'
+                const el = e.currentTarget as HTMLElement
+                el.style.background = 'rgba(185,28,28,0.05)'
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = 'var(--bg-2)'
+                const el = e.currentTarget as HTMLElement
+                el.style.background = 'var(--bg-2)'
               }}
             >
-              <span className="text-xs tracking-[0.25em]" style={{ color: 'var(--gold)', opacity: 0.6 }}>{a.num}</span>
-              <h3 className="text-lg font-medium tracking-tight" style={{ color: 'var(--text)' }}>{a.title}</h3>
-              <p className="text-sm leading-7" style={{ color: 'var(--muted)' }}>{a.desc}</p>
-              <div
-                className="w-0 h-px mt-auto transition-all duration-500 group-hover:w-full"
-                style={{ background: 'var(--gold)' }}
-              />
+              <span className="text-xs tracking-[0.3em] font-mono" style={{ color: 'var(--accent)', opacity: 0.7 }}>{s.num}</span>
+              <h3 className="text-sm font-semibold leading-snug tracking-tight" style={{ color: 'var(--text)' }}>{s.title}</h3>
+              <p className="text-xs leading-6" style={{ color: 'var(--muted)' }}>{s.desc}</p>
             </div>
           ))}
         </div>
