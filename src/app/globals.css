@@ -3,14 +3,14 @@
 :root {
   --accent: #B91C1C;
   --accent-light: #DC2626;
-  --accent-dim: rgba(185, 28, 28, 0.1);
-  --bg: #080805;
-  --bg-2: #0D0909;
-  --surface: rgba(255,255,255,0.025);
-  --border: rgba(255,255,255,0.07);
-  --border-c: rgba(185,28,28,0.2);
-  --text: #EDE9E3;
-  --muted: #7A6864;
+  --accent-dim: rgba(185, 28, 28, 0.08);
+  --bg: #0A0806;
+  --bg-2: #0F0B09;
+  --surface: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.07);
+  --border-c: rgba(185, 28, 28, 0.22);
+  --text: #F0ECE5;
+  --muted: #6E6460;
 }
 
 @theme inline {
@@ -34,10 +34,10 @@ body {
 
 ::-webkit-scrollbar { width: 2px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: rgba(185,28,28,0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: rgba(185, 28, 28, 0.35); border-radius: 2px; }
 
 .accent-text {
-  background: linear-gradient(135deg, #991B1B 0%, #EF4444 50%, #B91C1C 100%);
+  background: linear-gradient(135deg, #991B1B 0%, #EF4444 45%, #B91C1C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -46,23 +46,18 @@ body {
 .glass {
   background: var(--surface);
   border: 1px solid var(--border);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255,210,200,0.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,210,200,0.018) 1px, transparent 1px);
-  background-size: 72px 72px;
+    linear-gradient(rgba(255, 210, 200, 0.016) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 210, 200, 0.016) 1px, transparent 1px);
+  background-size: 80px 80px;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes expandLine {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }

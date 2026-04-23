@@ -1,107 +1,109 @@
+'use client'
+import { motion } from 'framer-motion'
+
+const ease = [0.16, 1, 0.3, 1] as const
+
 const milestones = [
-  {
-    year: '2009',
-    title: 'Founded in Kampala',
-    desc: 'HSF International Ltd is established in Kampala, Uganda — with a mandate to deliver world-class business solutions across key sectors.',
-  },
-  {
-    year: '2014',
-    title: 'Regional Expansion',
-    desc: 'Operations expand across East Africa, building partnerships with government agencies, NGOs, and private sector leaders throughout the region.',
-  },
-  {
-    year: '2018',
-    title: 'State Recognition',
-    desc: 'A landmark meeting with H.E. President Yoweri Museveni — recognizing HSF\'s contribution to Uganda\'s economic development and private sector growth.',
-  },
-  {
-    year: '2019',
-    title: 'UAE-Africa Business Summit',
-    desc: 'HSF represents Uganda on the international stage at the UAE-Africa Business Summit in Abu Dhabi, opening corridors for foreign direct investment.',
-  },
-  {
-    year: '2020',
-    title: 'World Future Energy Summit',
-    desc: 'Participation at WFES in Abu Dhabi positions HSF at the forefront of Uganda\'s emerging Oil, Gas & Energy sector strategy.',
-  },
-  {
-    year: '2021',
-    title: 'Digital Pearl Award',
-    desc: 'HSF receives recognition for ICT excellence — affirming its position as a technology-forward business solutions firm in the digital transformation era.',
-  },
-  {
-    year: '2023',
-    title: '1,000 Clients Milestone',
-    desc: 'A defining moment: 1,000 clients served across 8 sectors, cementing HSF\'s reputation as Uganda\'s most trusted multi-sector partner.',
-  },
-  {
-    year: '2024',
-    title: '15 Years. 1,485 Clients. 3,452 Projects.',
-    desc: 'Fifteen years of unbroken excellence. HSF stands as Uganda\'s leading business solutions firm with a track record that speaks for itself.',
-  },
+  { year: '2009', title: 'Founded in Kampala', desc: 'HSF International Ltd established in Uganda with a mandate to deliver world-class business solutions.' },
+  { year: '2014', title: 'Regional Expansion', desc: 'Operations extend across East Africa, building deep partnerships with government, NGOs, and private sector leaders.' },
+  { year: '2018', title: 'Presidential Recognition', desc: 'A landmark meeting with H.E. President Yoweri Museveni — acknowledging HSF\'s contribution to Uganda\'s economic growth.' },
+  { year: '2019', title: 'UAE-Africa Business Summit', desc: 'HSF represents Uganda in Abu Dhabi, opening direct corridors for foreign direct investment into the country.' },
+  { year: '2020', title: 'World Future Energy Summit', desc: 'Presence at WFES in Abu Dhabi positions HSF at the forefront of Uganda\'s Oil, Gas & Energy sector strategy.' },
+  { year: '2021', title: 'Digital Pearl Award', desc: 'Recognized for ICT excellence — confirming HSF\'s standing as a technology-forward solutions firm.' },
+  { year: '2023', title: '1,000 Clients Milestone', desc: 'A defining threshold: 1,000 clients served across all eight sectors. The reputation built itself.' },
+  { year: '2024', title: 'Fifteen Years of Excellence', desc: '1,485 clients. 3,452 projects. 8 industries. 15 years. The work continues.' },
 ]
 
 export default function Milestones() {
   return (
-    <section id="milestones" className="py-40" style={{ background: 'var(--bg-2)' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center gap-4 mb-6">
+    <section id="milestones" className="py-40 lg:py-56" style={{ background: 'var(--bg-2)' }}>
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+
+        <motion.div
+          className="flex items-center gap-4 mb-6"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, ease }}
+        >
           <div className="w-6 h-px" style={{ background: 'var(--accent)' }} />
-          <span className="text-xs tracking-[0.3em] uppercase" style={{ color: 'var(--accent)' }}>Milestones</span>
-        </div>
-        <h2
-          className="font-semibold leading-tight tracking-tight mb-20"
-          style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--text)' }}
+          <span className="text-[10px] tracking-[0.32em] uppercase" style={{ color: 'var(--accent)' }}>Milestones</span>
+        </motion.div>
+
+        <motion.h2
+          className="font-medium leading-tight tracking-tight mb-24"
+          style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5rem)', color: 'var(--text)', letterSpacing: '-0.02em' }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease, delay: 0.1 }}
         >
           Fifteen years
           <br />
           of building.
-        </h2>
+        </motion.h2>
 
         <div className="relative">
-          {/* Vertical timeline line */}
+          {/* Timeline spine (desktop only) */}
           <div
-            className="absolute left-[72px] top-0 bottom-0 w-px hidden md:block"
-            style={{ background: 'var(--border)' }}
+            className="absolute hidden md:block"
+            style={{
+              left: '88px',
+              top: '8px',
+              bottom: '8px',
+              width: '1px',
+              background: 'var(--border)',
+            }}
           />
 
-          <div className="flex flex-col gap-0">
+          <div className="flex flex-col">
             {milestones.map((m, i) => (
-              <div
+              <motion.div
                 key={m.year}
-                className="grid md:grid-cols-[144px_1fr] gap-6 md:gap-12 relative py-8"
+                className="relative grid md:grid-cols-[176px_1fr] gap-6 md:gap-16 py-10"
                 style={{ borderBottom: i < milestones.length - 1 ? '1px solid var(--border)' : 'none' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.65, ease, delay: 0.05 }}
               >
-                {/* Year + dot */}
-                <div className="flex md:flex-col items-center md:items-end gap-4 md:gap-2">
+                {/* Year */}
+                <div className="flex md:flex-row items-center md:items-start gap-5">
                   <span
-                    className="text-xs font-mono tracking-[0.2em] flex-shrink-0"
-                    style={{ color: 'var(--accent)' }}
+                    className="text-[11px] tracking-[0.2em] font-mono flex-shrink-0"
+                    style={{ color: 'var(--accent)', paddingTop: '2px' }}
                   >
                     {m.year}
                   </span>
-                  {/* Dot on the line */}
+
+                  {/* Dot — visible on desktop only */}
                   <div
-                    className="hidden md:block w-2 h-2 rounded-full flex-shrink-0 relative z-10"
+                    className="hidden md:block w-2.5 h-2.5 rounded-full flex-shrink-0 mt-0.5 relative z-10"
                     style={{
                       background: 'var(--accent)',
-                      marginRight: '-4.5px',
-                      boxShadow: '0 0 8px rgba(185,28,28,0.5)',
+                      boxShadow: '0 0 0 3px rgba(185,28,28,0.15)',
+                      marginLeft: 'auto',
                     }}
                   />
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col gap-2 md:pl-12">
-                  <h3 className="text-base font-semibold tracking-tight" style={{ color: 'var(--text)' }}>
+                <div className="flex flex-col gap-2">
+                  <h3
+                    className="font-medium"
+                    style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: 'var(--text)', letterSpacing: '-0.01em' }}
+                  >
                     {m.title}
                   </h3>
-                  <p className="text-sm leading-7" style={{ color: 'var(--muted)' }}>{m.desc}</p>
+                  <p className="leading-7" style={{ fontSize: '14px', color: 'var(--muted)' }}>
+                    {m.desc}
+                  </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   )

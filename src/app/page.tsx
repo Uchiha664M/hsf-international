@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import Ticker from '@/components/Ticker'
 import Stats from '@/components/Stats'
 import About from '@/components/About'
 import Focus from '@/components/Focus'
@@ -14,6 +15,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <Ticker />
       <Stats />
       <About />
       <Focus />
